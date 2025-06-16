@@ -482,7 +482,20 @@
 .video-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  transition: transform var(--transition-normal);
   gap: var(--space-6);
+}
+
+.video-gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  transition: transform var(--transition-normal);
+}
+
+.video-gallery img:hover {
+  transform: scale(1.05);
 }
 
 .video-item {
