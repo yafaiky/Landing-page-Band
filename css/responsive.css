@@ -54,8 +54,8 @@
         grid-template-columns: 1fr;
     }
     
-    .members-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .member-flexbox {
+        grid-template-columns: repeat(1, 1fr);
         gap: var(--space-4);
     }
     

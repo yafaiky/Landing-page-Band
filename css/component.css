@@ -301,6 +301,18 @@ img {
   object-fit: cover;
 }
 
+.member-flexbox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
+}
+
+.member-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
 .member-card h4 {
   color: var(--text-primary);
   margin-bottom: var(--space-2);
