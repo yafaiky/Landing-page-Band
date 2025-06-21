@@ -270,46 +270,214 @@
   color: var(--text-primary);
 }
 
-.band-members h3 {
-  margin-bottom: var(--space-2);
-  text-align: center;
+/* section members */
+.members {
+  background: var(--primary-color);
+  position: relative;
+}
+
+.members::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 70% 30%,
+    rgba(231, 76, 60, 0.05) 0%,
+    transparent 50%
+  );
+  z-index: 0;
+}
+
+.members .container {
+  position: relative;
+  z-index: 1;
 }
 
 .members-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
 }
 
 .member-card {
-  text-align: center;
-  padding: var(--space-2);
   background: var(--secondary-color);
-  border-radius: var(--radius-2xl);
-  transition: transform var(--transition-normal);
+  text-align: center;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  border: 1px solid var(--border-color);
+  position: relative;
 }
 
 .member-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent-color);
 }
 
-img {
-  width: 1000px;
-  height: 300px;
-  border-radius: var(--radius-md);
-  margin: 0 auto var(--space-4);
+.member-image {
+  position: relative;
+  overflow: hidden;
+  height: 350px;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  transition: transform var(--transition-slow);
 }
 
-.member-card h4 {
+.member-card:hover .member-image img {
+  transform: scale(1.1);
+}
+
+.member-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(231, 76, 60, 0.8) 0%,
+    rgba(192, 57, 43, 0.9) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.member-card:hover .member-overlay {
+  opacity: 1;
+}
+
+.member-social {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  font-size: var(--font-size-xl);
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.social-icon:hover {
+  background: var(--text-primary);
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.member-info {
+  padding: var(--space-6);
+}
+
+.member-name {
+  font-family: var(--font-band);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
   color: var(--text-primary);
   margin-bottom: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
-.member-card p {
+.member-role {
+  color: var(--accent-color);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.member-description {
   color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+.member-details {
+  display: flex;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-color);
+}
+
+.member-age,
+.member-experience {
   font-size: var(--font-size-sm);
-  margin-bottom: 0;
+  color: var(--text-muted);
+  background: var(--primary-color);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+/* bagian mobile effect carousel */
+
+@media (min-width: 768px) {
+  .desktop-cards {
+    display: block !important;
+  }
+  .mobile-carousel {
+    display: none !important;
+  }
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
+/* Mobile: Show carousel */
+@media (max-width: 767px) {
+ .desktop-cards {
+    display: none !important;
+  }
+
+  .mobile-carousel {
+    display: block !important;
+  }
+
+  .carousel-item {
+    text-align: center;
+  }
+
+  .member-card {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .member-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: var(--accent-color);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(255, 94, 0, 0.8);
+  border-radius: 50%;
+  padding: 1rem;
 }
 
 /* Music Section */
