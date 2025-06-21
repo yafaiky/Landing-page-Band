@@ -331,6 +331,7 @@
   transition: transform var(--transition-slow);
 }
 
+<<<<<<< HEAD
 .member-card:hover .member-image img {
   transform: scale(1.1);
 }
@@ -391,6 +392,21 @@
   font-family: var(--font-band);
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
+=======
+.member-flexbox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
+}
+
+.member-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.member-card h4 {
+>>>>>>> 8977775521e34111dfc2d724262a17f142df7442
   color: var(--text-primary);
   margin-bottom: var(--space-2);
   text-transform: uppercase;
