@@ -391,6 +391,7 @@
   font-family: var(--font-band);
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
+
 .member-flexbox {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
