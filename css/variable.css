@@ -21,6 +21,9 @@
     /* Typography */
     --font-primary: 'Inter', sans-serif;
     --font-display: 'Bebas Neue', cursive;
+    --font-display: 'Bebas Neue', cursive;
+    --font-band: 'Oswald', sans-serif;
+    --font-heavy: 'Anton', sans-serif;
     
     --font-size-xs: 0.75rem;      /* 12px */
     --font-size-sm: 0.875rem;     /* 14px */
@@ -101,4 +104,7 @@
     --container-lg: 960px;
     --container-xl: 1140px;
     --container-2xl: 1320px;
+
+    /* Font */
+    --font-weight-black: 900;
 }

@@ -186,7 +186,7 @@
     
     /* Members - 4 columns */
     .members-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
     
     /* Music platforms - 4 columns */

@@ -1,0 +1,54 @@
+/* Keyframes */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fromTop {
+  from { opacity: 0; transform: translateY(-100px) scale(0.9); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fromLeft {
+  from { opacity: 0; transform: translateX(-100px) scale(0.9); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes fromRight {
+  from { opacity: 0; transform: translateX(100px) scale(0.9); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+}
+
+.animate-on-scroll.animate-play.fade-up {
+  animation: fadeUp 0.5s ease-out forwards;
+}
+
+.animate-on-scroll.animate-play.from-top {
+  animation: fromTop 0.5s ease-out forwards;
+}
+
+.animate-on-scroll.animate-play.from-left {
+  animation: fromLeft 0.5s ease-out forwards;
+}
+
+.animate-on-scroll.animate-play.from-right {
+  animation: fromRight 0.5s ease-out forwards;
+}
+
+.member-wrapper.animate-on-scroll.animate-play.fade-up {
+  animation: fadeUp 0.5s ease-out forwards;
+}
+
+.member-wrapper.animate-on-scroll.animate-play.fade-up:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.member-wrapper.animate-on-scroll.animate-play.fade-up:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.member-wrapper.animate-on-scroll.animate-play.fade-up:nth-child(3) {
+  animation-delay: 0.6s;
+}

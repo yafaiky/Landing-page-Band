@@ -5,6 +5,7 @@ const tabButtons = document.querySelectorAll(".tab-btn");
 const tabPanes = document.querySelectorAll(".tab-pane");
 const navToggle = document.getElementById("navToggle");
 const navMenu = document.getElementById("navMenu");
+const cards = document.querySelectorAll(".member-card");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
