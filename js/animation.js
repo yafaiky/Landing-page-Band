@@ -15,3 +15,12 @@ const scrollObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.animate-on-scroll').forEach(el => {
   scrollObserver.observe(el);
 });
+
+VanillaTilt.init(document.querySelectorAll(".member-card"), {
+            max: 25,
+            speed: 800,
+            scale: 1.05,
+            glare: true,
+            "max-glare": 0.2,
+            perspective: 1000,
+        });
